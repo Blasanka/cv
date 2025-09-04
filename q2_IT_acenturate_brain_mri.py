@@ -100,8 +100,8 @@ if __name__ == "__main__":
         if original is not None:
             display_brain_results(original, white_matter, gray_matter)
             
-            cv2.imwrite('brain_white_matter_transformed.jpg', white_matter)
-            cv2.imwrite('brain_gray_matter_transformed.jpg', gray_matter)
+            cv2.imwrite('assets/brain_white_matter_transformed.jpg', white_matter)
+            cv2.imwrite('assets/brain_gray_matter_transformed.jpg', gray_matter)
             
         else:
             print("Cannot load image.")

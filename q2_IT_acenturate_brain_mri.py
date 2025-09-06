@@ -91,20 +91,12 @@ def display_brain_results(original, white, gray):
     plt.show()
 
 if __name__ == "__main__":
-    try:
-        image_path = 'assets/brain_proton_density_slice.png'
-        white_matter, gray_matter = plot_transformation_curves()
-        original, white_matter = apply_transformation(image_path, white_matter)
-        _, gray_matter = apply_transformation(image_path, gray_matter)
-        
-        if original is not None:
-            display_brain_results(original, white_matter, gray_matter)
-            
-            cv2.imwrite('assets/brain_white_matter_transformed.jpg', white_matter)
-            cv2.imwrite('assets/brain_gray_matter_transformed.jpg', gray_matter)
-            
-        else:
-            print("Cannot load image.")
-            
-    except Exception as e:
-        print(f"Error : {e}")
+    image_path = 'assets/brain_proton_density_slice.png'
+    white_matter, gray_matter = plot_transformation_curves()
+    original, white_matter = apply_transformation(image_path, white_matter)
+    _, gray_matter = apply_transformation(image_path, gray_matter)
+    
+    display_brain_results(original, white_matter, gray_matter)
+    
+    cv2.imwrite('assets/brain_white_matter_transformed.jpg', white_matter)
+    cv2.imwrite('assets/brain_gray_matter_transformed.jpg', gray_matter)

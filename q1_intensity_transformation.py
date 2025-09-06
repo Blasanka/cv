@@ -50,10 +50,7 @@ if __name__ == "__main__":
     
     try:
         original, transformed = apply_transformation(img_path, intensity_transformation)
-        
-        # displaying the transformed and original image
         plt.figure(figsize=(12, 6))
-        
         plt.subplot(1, 2, 1)
         plt.imshow(original, cmap='gray')
         plt.title('Original Emma')

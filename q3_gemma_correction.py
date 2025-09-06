@@ -23,10 +23,7 @@ def gamma_correction(l_channel, gamma):
 
 def check_gamma_values(img_path):
     img = cv2.imread(img_path)
-    if img is None:
-        img = np.array(Image.open(img_path))
-    else:
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     lab_image = to_lab(img)
     l_channel = lab_image[:, :, 0]
